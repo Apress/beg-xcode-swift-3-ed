@@ -1,0 +1,8 @@
+/*
+  Localizable.strings
+  SayMyName
+
+  Created by Matthew Knott on 21/08/2014.
+  Copyright (c) 2014 Matthew Knott. All rights reserved.
+*/
+"SELECTED" = "Has elegido %@ %@";

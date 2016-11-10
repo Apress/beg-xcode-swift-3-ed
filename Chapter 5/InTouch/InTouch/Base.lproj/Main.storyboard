@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="InTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gDK-cR-mpg">
+                                <rect key="frame" x="281" y="107" width="38" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9LI-J3-RUt"/>
+                                </constraints>
+                                <state key="normal" title="Email">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendEmail:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mDc-gL-Bas"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQb-YG-uhG">
+                                <rect key="frame" x="253" y="145" width="95" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="F38-Cx-0Gn"/>
+                                </constraints>
+                                <state key="normal" title="Text Message">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendText:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kgf-ZZ-s1F"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ways to get in touch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUf-p4-JKi">
+                                <rect key="frame" x="16" y="40" width="568" height="59"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOD-op-0D1">
+                                <rect key="frame" x="273" y="183" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="vxv-tQ-gJs"/>
+                                </constraints>
+                                <state key="normal" title="Website">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openWebsite:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="I5X-7M-THV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gDK-cR-mpg" firstAttribute="top" secondItem="NUf-p4-JKi" secondAttribute="bottom" constant="8" symbolic="YES" id="95L-bN-r49"/>
+                            <constraint firstItem="NUf-p4-JKi" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="BVA-QS-rt1"/>
+                            <constraint firstItem="NUf-p4-JKi" firstAttribute="centerX" secondItem="gDK-cR-mpg" secondAttribute="centerX" id="C6y-u3-Ukc"/>
+                            <constraint firstItem="NUf-p4-JKi" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="Lwu-Kp-DtF"/>
+                            <constraint firstItem="bOD-op-0D1" firstAttribute="top" secondItem="YQb-YG-uhG" secondAttribute="bottom" constant="8" symbolic="YES" id="Qd4-zq-yfF"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="bOD-op-0D1" secondAttribute="bottom" constant="387" id="ZO1-jd-MJr"/>
+                            <constraint firstItem="YQb-YG-uhG" firstAttribute="top" secondItem="gDK-cR-mpg" secondAttribute="bottom" constant="8" symbolic="YES" id="fwD-cU-3Xl"/>
+                            <constraint firstItem="YQb-YG-uhG" firstAttribute="centerX" secondItem="bOD-op-0D1" secondAttribute="centerX" id="hwZ-H5-nnX"/>
+                            <constraint firstItem="YQb-YG-uhG" firstAttribute="centerX" secondItem="gDK-cR-mpg" secondAttribute="centerX" id="isP-YV-NtS"/>
+                            <constraint firstItem="NUf-p4-JKi" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="mPI-97-FaK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
