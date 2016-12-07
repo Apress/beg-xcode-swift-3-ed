@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0600"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,68 +14,48 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D6C39F81A02705900DBF7A2"
+               BlueprintIdentifier = "6D04F49D1D4E33BE00DD0732"
                BuildableName = "HearMeNow.app"
                BlueprintName = "HearMeNow"
-               ReferencedContainer = "container:HearMeNow.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D6C3A0D1A02705900DBF7A2"
-               BuildableName = "HearMeNowTests.xctest"
-               BlueprintName = "HearMeNowTests"
                ReferencedContainer = "container:HearMeNow.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      buildConfiguration = "Debug">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6D6C3A0D1A02705900DBF7A2"
-               BuildableName = "HearMeNowTests.xctest"
-               BlueprintName = "HearMeNowTests"
-               ReferencedContainer = "container:HearMeNow.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D6C39F81A02705900DBF7A2"
+            BlueprintIdentifier = "6D04F49D1D4E33BE00DD0732"
             BuildableName = "HearMeNow.app"
             BlueprintName = "HearMeNow"
             ReferencedContainer = "container:HearMeNow.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
+      <AdditionalOptions>
+      </AdditionalOptions>
    </TestAction>
    <LaunchAction
+      buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Debug"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D6C39F81A02705900DBF7A2"
+            BlueprintIdentifier = "6D04F49D1D4E33BE00DD0732"
             BuildableName = "HearMeNow.app"
             BlueprintName = "HearMeNow"
             ReferencedContainer = "container:HearMeNow.xcodeproj">
@@ -85,15 +65,16 @@
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
+      buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6D6C39F81A02705900DBF7A2"
+            BlueprintIdentifier = "6D04F49D1D4E33BE00DD0732"
             BuildableName = "HearMeNow.app"
             BlueprintName = "HearMeNow"
             ReferencedContainer = "container:HearMeNow.xcodeproj">

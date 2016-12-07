@@ -2,74 +2,78 @@
 //  GameScene.swift
 //  AlienDev
 //
-//  Created by Matthew Knott on 03/11/2014.
-//  Copyright (c) 2014 Matthew Knott. All rights reserved.
+//  Created by Matthew Knott on 30/07/2016.
+//  Copyright © 2016 Matthew Knott. All rights reserved.
 //
 
 import SpriteKit
+import GameplayKit
 
 class GameScene: SKScene {
     
     var alienDev : SKSpriteNode?
     var lastSpawnTimeInterval : CFTimeInterval?
     var lastUpdateTimeInterval : CFTimeInterval?
+
     
-    override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        self.backgroundColor = SKColor.whiteColor()
+    override func didMove(to view: SKView) {
+        self.backgroundColor = SKColor.white
         alienDev = SKSpriteNode(imageNamed: "dev")
-        alienDev!.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        alienDev?.size = CGSizeMake(120, 220)
+        alienDev!.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        alienDev!.size = CGSize(width: 120, height: 220)
         
         self.addChild(alienDev!)
-
+        
         let title = createTextNode("Welcome to Alien Dev",
-            nodeName: "titleNode",
-            position: CGPointMake(CGRectGetMidX(self.frame), CGRectGetMaxY(self.frame)-150))
+                                   nodeName: "titleNode",
+                                   position: CGPoint(x: self.frame.midX, y: self.frame.midY+150))
         self.addChild(title)
     }
     
-    func createTextNode(text: String, nodeName: String, position: CGPoint) -> SKLabelNode {
+    func createTextNode(_ text: String, nodeName: String, position: CGPoint) -> SKLabelNode {
         let labelNode = SKLabelNode(fontNamed: "Futura")
         labelNode.name = nodeName
         labelNode.text = text
         labelNode.fontSize = 30
-        labelNode.fontColor = SKColor.blackColor()
+        labelNode.fontColor = SKColor.black
         labelNode.position = position
+
         return labelNode
     }
     
     func createBug() {
         let evilBug = SKSpriteNode(imageNamed: "bug")
-        evilBug.size = CGSizeMake(220, 120)
-        
+        evilBug.size = CGSize(width:220, height:120)
         
         let minX = (evilBug.size.width / 2)
         let maxX = (self.frame.size.width - evilBug.size.width)
-        let rangeX : UInt32 = UInt32(maxX - minX)
+        let rangeX = UInt32(maxX - minX)
         
         let finalX = Int(arc4random() % rangeX) + Int(minX)
+        let startPos = CGPoint(x:CGFloat(finalX),
+                               y:self.frame.size.height + evilBug.size.height/2)
+        let endPos = CGPoint(x:CGFloat(finalX),
+                             y:evilBug.size.height/2)
         
-        evilBug.position = CGPointMake(CGFloat(finalX), self.frame.size.height + evilBug.size.height/2)
+        evilBug.position = startPos
         self.addChild(evilBug)
         
         let minDuration : Int = 3
         let maxDuration : Int = 8
         let rangeDuration : UInt32 = UInt32(maxDuration - minDuration)
-        
         let finalDuration = Int(arc4random() % rangeDuration) + minDuration
         
-        let actionMove = SKAction.moveTo(CGPointMake(CGFloat(finalX), -evilBug.size.height/2), duration:NSTimeInterval(finalDuration))
+        let actionMove = SKAction.move(to: endPos, duration:TimeInterval(finalDuration))
         let actionMoveDone = SKAction.removeFromParent()
         
-        evilBug.runAction(SKAction.sequence([actionMove, actionMoveDone]))
+        evilBug.run(SKAction.sequence([actionMove, actionMoveDone]))
     }
-   
+
     func updateWithTimeSinceLastUpdate(timeSinceLast : CFTimeInterval) {
-        if let lastSpawn = lastSpawnTimeInterval {
+        if lastSpawnTimeInterval != nil {
             lastSpawnTimeInterval! += timeSinceLast
-            if (lastSpawnTimeInterval > 1 ) {
-                lastSpawnTimeInterval = 0
+            if (lastSpawnTimeInterval! > 1) {
+                lastSpawnTimeInterval! = 0
                 createBug()
             }
         }
@@ -78,9 +82,8 @@ class GameScene: SKScene {
             lastSpawnTimeInterval = 0
         }
     }
-
-    override func update(currentTime: CFTimeInterval) {
-        
+    
+    override func update(_ currentTime: TimeInterval) {
         if let lastUpdate = lastUpdateTimeInterval {
             
             var timeSinceLast = currentTime - lastUpdate as CFTimeInterval
@@ -91,12 +94,12 @@ class GameScene: SKScene {
                 lastUpdateTimeInterval = currentTime
             }
             
-            updateWithTimeSinceLastUpdate(timeSinceLast)
+            updateWithTimeSinceLastUpdate(timeSinceLast: timeSinceLast)
         }
         else
         {
             lastUpdateTimeInterval = currentTime
         }
+
     }
-    
 }

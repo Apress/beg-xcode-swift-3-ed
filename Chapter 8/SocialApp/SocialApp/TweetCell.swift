@@ -2,8 +2,8 @@
 //  TweetCell.swift
 //  SocialApp
 //
-//  Created by Matthew Knott on 18/10/2014.
-//  Copyright (c) 2014 Matthew Knott. All rights reserved.
+//  Created by Matthew Knott on 08/08/2016.
+//  Copyright © 2016 Matthew Knott. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,7 @@ class TweetCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

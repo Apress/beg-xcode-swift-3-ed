@@ -2,79 +2,61 @@
 //  ViewController.swift
 //  SayMyName
 //
-//  Created by Matthew Knott on 21/08/2014.
-//  Copyright (c) 2014 Matthew Knott. All rights reserved.
+//  Created by Matthew Knott on 31/07/2016.
+//  Copyright © 2016 Matthew Knott. All rights reserved.
 //
 
 import UIKit
-import AddressBookUI
+import ContactsUI
 
-class ViewController: UIViewController, ABPeoplePickerNavigationControllerDelegate {
-    
-    @IBOutlet weak var forenameField: UITextField!
-    @IBOutlet weak var surnameField: UITextField!
-    
-    
-    
-    @IBAction func getContact(sender: AnyObject) {
-        if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Denied ||
-            ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Restricted){
-                println("Denied");
-        }else if (ABAddressBookGetAuthorizationStatus() == ABAuthorizationStatus.Authorized){
-            self.showPeoplePicker()
-        } else { //Undetermined
-            
-            var emptyDictionary: CFDictionaryRef?
-            var addressBook: ABAddressBookRef?
-            
-            println("requesting access...")
-            addressBook = obtainAddressbook(ABAddressBookCreateWithOptions(emptyDictionary,nil))
-            
-            ABAddressBookRequestAccessWithCompletion(addressBook, { success, error in
-                if success {
-                    println("success")
+
+class ViewController: UIViewController, CNContactPickerDelegate {
+
+    @IBOutlet weak var firstnameField: UITextField!
+    @IBOutlet weak var lastnameField: UITextField!
+    @IBAction func getContact(_ sender: AnyObject) {
+        let cn = CNContactStore()
+        cn.requestAccess(for: CNEntityType.contacts) {
+            (success: Bool, error: Error?) -> Void in
+            DispatchQueue.main.async() {
+                if (success == true) {
                     self.showPeoplePicker()
                 }
-                else
-                {
-                    println("error")
-                }
-            })
+            }
         }
     }
-    @IBAction func sayContact(sender: AnyObject) {
-        var personName = String(format: NSLocalizedString("SELECTED", comment: "Selected Person"), forenameField.text, surnameField.text)
-        TextToSpeech.SayText(personName)
+    @IBAction func sayContact(_ sender: AnyObject) {
+        var personName : String = NSLocalizedString("SELECTED", comment: "Selected Person")
+        if let forename = firstnameField.text {
+            personName += forename
+        }
+        
+        personName += " "
+        
+        if let lastname = lastnameField.text {
+           personName += lastname
+        }
+        
+        TextToSpeech.SayText(input: personName)
     }
     
     func showPeoplePicker() {
         
-        var picker : ABPeoplePickerNavigationController = ABPeoplePickerNavigationController()
-        picker.peoplePickerDelegate = self
+        let picker : CNContactPickerViewController = CNContactPickerViewController()
+        picker.delegate = self
         
-        self.presentViewController(picker, animated: true, completion: nil)
+        self.present(picker, animated: true, completion: nil)
+    }
+    
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contact: CNContact) {
+        firstnameField.text? = contact.givenName
+        lastnameField.text? = contact.familyName
+    }
+    
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController) {
+        print("Cancelled")
     }
 
-    func obtainAddressbook(addressbookRef: Unmanaged<ABAddressBookRef>!) -> ABAddressBookRef? {
-        if let adressbook = addressbookRef {
-            return Unmanaged<NSObject>.fromOpaque(adressbook.toOpaque()).takeUnretainedValue()
-        }
-        return nil
-    }
-    
-    
-    func peoplePickerNavigationController(peoplePicker: ABPeoplePickerNavigationController!,
-        didSelectPerson person: ABRecordRef!) {
-            
-        if let forename = ABRecordCopyValue(person, kABPersonFirstNameProperty).takeRetainedValue() as? NSString {
-            forenameField.text = forename
-        }
-        
-        if let surname = ABRecordCopyValue(person, kABPersonLastNameProperty).takeRetainedValue() as? NSString {
-            surnameField.text = surname
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.

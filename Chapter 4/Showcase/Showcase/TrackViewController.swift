@@ -2,24 +2,26 @@
 //  TrackViewController.swift
 //  Showcase
 //
-//  Created by Matthew Knott on 01/08/2014.
-//  Copyright (c) 2014 Matthew Knott. All rights reserved.
+//  Created by Matthew Knott on 16/07/2016.
+//  Copyright © 2016 Matthew Knott. All rights reserved.
 //
 
 import UIKit
 import CoreLocation
 
 class TrackViewController: UIViewController, CLLocationManagerDelegate {
-    
+
     var locationManager: CLLocationManager!
     
     @IBOutlet weak var locationText: UITextView!
     @IBOutlet weak var toggleSwitch: UISwitch!
-    @IBAction func changeToggle(sender: AnyObject) {
-        if(toggleSwitch.on)
-        {
+    @IBAction func changeToggle(_ sender: AnyObject) {
+        let switc = toggleSwitch.isOn
+        print(switc)
+        
+        if toggleSwitch.isOn {
             if (CLLocationManager.locationServicesEnabled() == false) {
-                self.toggleSwitch.on = false
+                self.toggleSwitch.isOn = false
             }
             
             if locationManager == nil {
@@ -32,13 +34,15 @@ class TrackViewController: UIViewController, CLLocationManagerDelegate {
             
             locationManager.startUpdatingLocation()
         }
-            else
+        else
         {
             if locationManager != nil {
                 locationManager.stopUpdatingLocation()
             }
         }
+
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +54,13 @@ class TrackViewController: UIViewController, CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        var location:CLLocation = locations[locations.endIndex-1] as CLLocation
-        self.locationText.text = location.description;
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location:CLLocation = locations[locations.endIndex-1] as CLLocation
+        self.locationText.text = location.description
     }
 
-    func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        locationText.text = "failed with error \(error.description) "
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        locationText.text = "failed with error \(error.localizedDescription) "
     }
 }
 

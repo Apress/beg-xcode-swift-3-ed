@@ -2,72 +2,72 @@
 //  FollowingViewController.swift
 //  SocialApp
 //
-//  Created by Matthew Knott on 20/10/2014.
-//  Copyright (c) 2014 Matthew Knott. All rights reserved.
+//  Created by Matthew Knott on 10/08/2016.
+//  Copyright © 2016 Matthew Knott. All rights reserved.
 //
 
 import UIKit
 import Accounts
 import Social
 
-let reuseIdentifier = "Cell"
+private let reuseIdentifier = "FollowerCell"
 
 class FollowingViewController: UICollectionViewController {
     
     var following : NSMutableArray?
-    var imageCache : NSCache?
-    var queue : NSOperationQueue?
+    var imageCache : NSCache<AnyObject, AnyObject>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Register cell classes
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-        queue = NSOperationQueue()
-        queue?.maxConcurrentOperationCount = 4
+        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         self.tabBarController?.navigationItem.title = "Following"
         
         retrieveUsers()
+
     }
 
     func retrieveUsers() {
         following?.removeAllObjects()
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let accountData = userDefaults.objectForKey("selectedAccount") as NSData
-        let selectedAccount = NSKeyedUnarchiver.unarchiveObjectWithData(accountData) as ACAccount
-
-        let requestURL = NSURL(string: "https://api.twitter.com/1.1/friends/list.json?count=200")
-
-        let request = SLRequest(forServiceType: SLServiceTypeTwitter,
-                requestMethod: SLRequestMethod.GET,
-                URL: requestURL,
-                parameters: nil)
-
-        request.account = selectedAccount
-
-        request.performRequestWithHandler()
-        {
-            responseData, urlResponse, error in
+        let userDefaults = UserDefaults.standard
+        let accountData = userDefaults.object(forKey: "selectedAccount") as! Data
+        let selectedAccount = NSKeyedUnarchiver.unarchiveObject(with: accountData) as! ACAccount
+        
+        let requestURL = URL(string: "https://api.twitter.com/1.1/friends/list.json?count=200")
+        
+        if let request = SLRequest(forServiceType: SLServiceTypeTwitter,
+                                requestMethod: SLRequestMethod.GET,
+                                url: requestURL,
+                                parameters: nil) {
+        
+            request.account = selectedAccount
             
-            if(urlResponse.statusCode == 200)
+            request.perform()
             {
-                var jsonParseError : NSError?
-                let followingData = NSJSONSerialization.JSONObjectWithData(responseData,
-                    options: NSJSONReadingOptions.MutableContainers,
-                    error: &jsonParseError) as NSDictionary
+                responseData, urlResponse, error in
                 
-                self.following = followingData.objectForKey("users") as? NSMutableArray
-            }
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                self.collectionView.reloadData()
+                if(urlResponse?.statusCode == 200)
+                {
+                    do {
+                        let followingData = try JSONSerialization.jsonObject(with: responseData!,
+                                                                                       options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                        
+                        self.following = followingData.object(forKey: "users") as? NSMutableArray
+                    }
+                    catch let error as NSError {
+                        print("json error: \(error.localizedDescription)")
+                    }
+                }
+                
+                DispatchQueue.main.async {
+                    self.collectionView!.reloadData()
+                }
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -77,7 +77,7 @@ class FollowingViewController: UICollectionViewController {
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
     }
@@ -85,12 +85,13 @@ class FollowingViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
 
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let followCount = following?.count {
             return followCount
         }
@@ -100,39 +101,50 @@ class FollowingViewController: UICollectionViewController {
         }
     }
 
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-
-        let userData = following?.objectAtIndex(indexPath.row) as NSDictionary
-        let imageURLString = userData.objectForKey("profile_image_url") as String
-
-        if let image = imageCache?.objectForKey(imageURLString) as? UIImage {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+    
+        let userData = following?.object(at: indexPath.row) as! NSDictionary
+        let imageURLString = userData.object(forKey: "profile_image_url") as! String
+    
+        let operationQueue = OperationQueue.main
+        operationQueue.maxConcurrentOperationCount = 4
+        
+        if let image = imageCache?.object(forKey: imageURLString as AnyObject) as? UIImage {
             let imageView = UIImageView(image: image) as UIImageView
             imageView.bounds = cell.frame
             cell.addSubview(imageView)
         }
         else
         {
-            queue?.addOperationWithBlock() {
-                let imageURL = NSURL(string: imageURLString) as NSURL?
-                let imageData = NSData(contentsOfURL: imageURL!) as NSData?
-                let image = UIImage(data: imageData!) as UIImage?
+            operationQueue.addOperation() {
+                let imageURL = URL(string: imageURLString)
                 
-                if let downloadedImage = image {
-                    NSOperationQueue.mainQueue().addOperationWithBlock(){
-                        let imageView = UIImageView(image: image)
-                        imageView.bounds = cell.frame
+                do {
+                    if let imageData : Data = try Data(contentsOf: imageURL!) {
                         
-                        if let cell = self.collectionView.cellForItemAtIndexPath(indexPath) as UICollectionViewCell! {
-                            cell.addSubview(imageView)
+                        let image = UIImage(data: imageData) as UIImage?
+                        
+                        if let downloadedImage = image {
+                            OperationQueue.main.addOperation(){
+                                let imageView = UIImageView(image: downloadedImage)
+                                imageView.bounds = cell.frame
+                                
+                                if let cell = self.collectionView!.cellForItem(at: indexPath) as UICollectionViewCell! {
+                                    cell.addSubview(imageView)
+                                }
+                            }
+                            
+                            self.imageCache?.setObject(downloadedImage, forKey: imageURLString as AnyObject)
                         }
                     }
-                    
-                    self.imageCache?.setObject(image!, forKey: imageURLString)
+                }
+                catch let error as NSError {
+                    print("parse error: \(error.localizedDescription)")
                 }
             }
+            
         }
-        
         
         return cell
     }
@@ -141,29 +153,29 @@ class FollowingViewController: UICollectionViewController {
 
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
-    func collectionView(collectionView: UICollectionView!, shouldHighlightItemAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     */
 
     /*
     // Uncomment this method to specify if the specified item should be selected
-    func collectionView(collectionView: UICollectionView!, shouldSelectItemAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     */
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    func collectionView(collectionView: UICollectionView!, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath!) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         return false
     }
 
-    func collectionView(collectionView: UICollectionView!, canPerformAction action: String!, forItemAtIndexPath indexPath: NSIndexPath!, withSender sender: AnyObject!) -> Bool {
+    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: AnyObject?) -> Bool {
         return false
     }
 
-    func collectionView(collectionView: UICollectionView!, performAction action: String!, forItemAtIndexPath indexPath: NSIndexPath!, withSender sender: AnyObject!) {
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: AnyObject?) {
     
     }
     */

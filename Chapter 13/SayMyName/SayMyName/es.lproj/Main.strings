@@ -1,6 +1,6 @@
 
-/* Class = "IBUILabel"; text = "Surname"; ObjectID = "9P5-gn-dwy"; */
-"9P5-gn-dwy.text" = "Apellidos";
+/* Class = "UILabel"; text = "First name"; ObjectID = "JU2-na-FV4"; */
+"JU2-na-FV4.text" = "Nombre";
 
-/* Class = "IBUILabel"; text = "Forename"; ObjectID = "xac-Pr-WzX"; */
-"xac-Pr-WzX.text" = "Nombre";
+/* Class = "UILabel"; text = "Last name"; ObjectID = "rX0-Rg-YH7"; */
+"rX0-Rg-YH7.text" = "Apellidos";

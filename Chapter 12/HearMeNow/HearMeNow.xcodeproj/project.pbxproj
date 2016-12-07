@@ -7,46 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D6C39FF1A02705900DBF7A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C39FE1A02705900DBF7A2 /* AppDelegate.swift */; };
-		6D6C3A011A02705900DBF7A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C3A001A02705900DBF7A2 /* ViewController.swift */; };
-		6D6C3A041A02705900DBF7A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C3A021A02705900DBF7A2 /* Main.storyboard */; };
-		6D6C3A061A02705900DBF7A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C3A051A02705900DBF7A2 /* Images.xcassets */; };
-		6D6C3A091A02705900DBF7A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6C3A071A02705900DBF7A2 /* LaunchScreen.xib */; };
-		6D6C3A151A02705900DBF7A2 /* HearMeNowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6C3A141A02705900DBF7A2 /* HearMeNowTests.swift */; };
+		6D04F4A21D4E33BE00DD0732 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F4A11D4E33BE00DD0732 /* AppDelegate.swift */; };
+		6D04F4A41D4E33BE00DD0732 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D04F4A31D4E33BE00DD0732 /* ViewController.swift */; };
+		6D04F4A71D4E33BE00DD0732 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D04F4A51D4E33BE00DD0732 /* Main.storyboard */; };
+		6D04F4A91D4E33BE00DD0732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D04F4A81D4E33BE00DD0732 /* Assets.xcassets */; };
+		6D04F4AC1D4E33BE00DD0732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D04F4AA1D4E33BE00DD0732 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		6D6C3A0F1A02705900DBF7A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6D6C39F11A02705900DBF7A2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6D6C39F81A02705900DBF7A2;
-			remoteInfo = HearMeNow;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		6D6C39F91A02705900DBF7A2 /* HearMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D6C39FD1A02705900DBF7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D6C39FE1A02705900DBF7A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6D6C3A001A02705900DBF7A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6D6C3A031A02705900DBF7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		6D6C3A051A02705900DBF7A2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6D6C3A081A02705900DBF7A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		6D6C3A0E1A02705900DBF7A2 /* HearMeNowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HearMeNowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D6C3A131A02705900DBF7A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6D6C3A141A02705900DBF7A2 /* HearMeNowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HearMeNowTests.swift; sourceTree = "<group>"; };
+		6D04F49E1D4E33BE00DD0732 /* HearMeNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HearMeNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D04F4A11D4E33BE00DD0732 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6D04F4A31D4E33BE00DD0732 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D04F4A61D4E33BE00DD0732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D04F4A81D4E33BE00DD0732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D04F4AB1D4E33BE00DD0732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D04F4AD1D4E33BE00DD0732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		6D6C39F61A02705900DBF7A2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D6C3A0B1A02705900DBF7A2 /* Frameworks */ = {
+		6D04F49B1D4E33BE00DD0732 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,72 +35,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6D6C39F01A02705900DBF7A2 = {
+		6D04F4951D4E33BE00DD0732 = {
 			isa = PBXGroup;
 			children = (
-				6D6C39FB1A02705900DBF7A2 /* HearMeNow */,
-				6D6C3A111A02705900DBF7A2 /* HearMeNowTests */,
-				6D6C39FA1A02705900DBF7A2 /* Products */,
+				6D04F4A01D4E33BE00DD0732 /* HearMeNow */,
+				6D04F49F1D4E33BE00DD0732 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		6D6C39FA1A02705900DBF7A2 /* Products */ = {
+		6D04F49F1D4E33BE00DD0732 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D6C39F91A02705900DBF7A2 /* HearMeNow.app */,
-				6D6C3A0E1A02705900DBF7A2 /* HearMeNowTests.xctest */,
+				6D04F49E1D4E33BE00DD0732 /* HearMeNow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6D6C39FB1A02705900DBF7A2 /* HearMeNow */ = {
+		6D04F4A01D4E33BE00DD0732 /* HearMeNow */ = {
 			isa = PBXGroup;
 			children = (
-				6D6C39FE1A02705900DBF7A2 /* AppDelegate.swift */,
-				6D6C3A001A02705900DBF7A2 /* ViewController.swift */,
-				6D6C3A021A02705900DBF7A2 /* Main.storyboard */,
-				6D6C3A051A02705900DBF7A2 /* Images.xcassets */,
-				6D6C3A071A02705900DBF7A2 /* LaunchScreen.xib */,
-				6D6C39FC1A02705900DBF7A2 /* Supporting Files */,
+				6D04F4A11D4E33BE00DD0732 /* AppDelegate.swift */,
+				6D04F4A31D4E33BE00DD0732 /* ViewController.swift */,
+				6D04F4A51D4E33BE00DD0732 /* Main.storyboard */,
+				6D04F4A81D4E33BE00DD0732 /* Assets.xcassets */,
+				6D04F4AA1D4E33BE00DD0732 /* LaunchScreen.storyboard */,
+				6D04F4AD1D4E33BE00DD0732 /* Info.plist */,
 			);
 			path = HearMeNow;
-			sourceTree = "<group>";
-		};
-		6D6C39FC1A02705900DBF7A2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6D6C39FD1A02705900DBF7A2 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6D6C3A111A02705900DBF7A2 /* HearMeNowTests */ = {
-			isa = PBXGroup;
-			children = (
-				6D6C3A141A02705900DBF7A2 /* HearMeNowTests.swift */,
-				6D6C3A121A02705900DBF7A2 /* Supporting Files */,
-			);
-			path = HearMeNowTests;
-			sourceTree = "<group>";
-		};
-		6D6C3A121A02705900DBF7A2 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6D6C3A131A02705900DBF7A2 /* Info.plist */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6D6C39F81A02705900DBF7A2 /* HearMeNow */ = {
+		6D04F49D1D4E33BE00DD0732 /* HearMeNow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6D6C3A181A02705900DBF7A2 /* Build configuration list for PBXNativeTarget "HearMeNow" */;
+			buildConfigurationList = 6D04F4B01D4E33BE00DD0732 /* Build configuration list for PBXNativeTarget "HearMeNow" */;
 			buildPhases = (
-				6D6C39F51A02705900DBF7A2 /* Sources */,
-				6D6C39F61A02705900DBF7A2 /* Frameworks */,
-				6D6C39F71A02705900DBF7A2 /* Resources */,
+				6D04F49A1D4E33BE00DD0732 /* Sources */,
+				6D04F49B1D4E33BE00DD0732 /* Frameworks */,
+				6D04F49C1D4E33BE00DD0732 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -129,46 +81,26 @@
 			);
 			name = HearMeNow;
 			productName = HearMeNow;
-			productReference = 6D6C39F91A02705900DBF7A2 /* HearMeNow.app */;
+			productReference = 6D04F49E1D4E33BE00DD0732 /* HearMeNow.app */;
 			productType = "com.apple.product-type.application";
-		};
-		6D6C3A0D1A02705900DBF7A2 /* HearMeNowTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6D6C3A1B1A02705900DBF7A2 /* Build configuration list for PBXNativeTarget "HearMeNowTests" */;
-			buildPhases = (
-				6D6C3A0A1A02705900DBF7A2 /* Sources */,
-				6D6C3A0B1A02705900DBF7A2 /* Frameworks */,
-				6D6C3A0C1A02705900DBF7A2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6D6C3A101A02705900DBF7A2 /* PBXTargetDependency */,
-			);
-			name = HearMeNowTests;
-			productName = HearMeNowTests;
-			productReference = 6D6C3A0E1A02705900DBF7A2 /* HearMeNowTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		6D6C39F11A02705900DBF7A2 /* Project object */ = {
+		6D04F4961D4E33BE00DD0732 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Matthew Knott";
 				TargetAttributes = {
-					6D6C39F81A02705900DBF7A2 = {
-						CreatedOnToolsVersion = 6.0.1;
-					};
-					6D6C3A0D1A02705900DBF7A2 = {
-						CreatedOnToolsVersion = 6.0.1;
-						TestTargetID = 6D6C39F81A02705900DBF7A2;
+					6D04F49D1D4E33BE00DD0732 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 6D6C39F41A02705900DBF7A2 /* Build configuration list for PBXProject "HearMeNow" */;
+			buildConfigurationList = 6D04F4991D4E33BE00DD0732 /* Build configuration list for PBXProject "HearMeNow" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -176,89 +108,66 @@
 				en,
 				Base,
 			);
-			mainGroup = 6D6C39F01A02705900DBF7A2;
-			productRefGroup = 6D6C39FA1A02705900DBF7A2 /* Products */;
+			mainGroup = 6D04F4951D4E33BE00DD0732;
+			productRefGroup = 6D04F49F1D4E33BE00DD0732 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6D6C39F81A02705900DBF7A2 /* HearMeNow */,
-				6D6C3A0D1A02705900DBF7A2 /* HearMeNowTests */,
+				6D04F49D1D4E33BE00DD0732 /* HearMeNow */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		6D6C39F71A02705900DBF7A2 /* Resources */ = {
+		6D04F49C1D4E33BE00DD0732 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6C3A041A02705900DBF7A2 /* Main.storyboard in Resources */,
-				6D6C3A091A02705900DBF7A2 /* LaunchScreen.xib in Resources */,
-				6D6C3A061A02705900DBF7A2 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D6C3A0C1A02705900DBF7A2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				6D04F4AC1D4E33BE00DD0732 /* LaunchScreen.storyboard in Resources */,
+				6D04F4A91D4E33BE00DD0732 /* Assets.xcassets in Resources */,
+				6D04F4A71D4E33BE00DD0732 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6D6C39F51A02705900DBF7A2 /* Sources */ = {
+		6D04F49A1D4E33BE00DD0732 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D6C3A011A02705900DBF7A2 /* ViewController.swift in Sources */,
-				6D6C39FF1A02705900DBF7A2 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6D6C3A0A1A02705900DBF7A2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6D6C3A151A02705900DBF7A2 /* HearMeNowTests.swift in Sources */,
+				6D04F4A41D4E33BE00DD0732 /* ViewController.swift in Sources */,
+				6D04F4A21D4E33BE00DD0732 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		6D6C3A101A02705900DBF7A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6D6C39F81A02705900DBF7A2 /* HearMeNow */;
-			targetProxy = 6D6C3A0F1A02705900DBF7A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		6D6C3A021A02705900DBF7A2 /* Main.storyboard */ = {
+		6D04F4A51D4E33BE00DD0732 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6D6C3A031A02705900DBF7A2 /* Base */,
+				6D04F4A61D4E33BE00DD0732 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		6D6C3A071A02705900DBF7A2 /* LaunchScreen.xib */ = {
+		6D04F4AA1D4E33BE00DD0732 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				6D6C3A081A02705900DBF7A2 /* Base */,
+				6D04F4AB1D4E33BE00DD0732 /* Base */,
 			);
-			name = LaunchScreen.xib;
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		6D6C3A161A02705900DBF7A2 /* Debug */ = {
+		6D04F4AE1D4E33BE00DD0732 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -266,6 +175,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -274,33 +184,38 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		6D6C3A171A02705900DBF7A2 /* Release */ = {
+		6D04F4AF1D4E33BE00DD0732 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -308,6 +223,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -315,106 +231,72 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		6D6C3A191A02705900DBF7A2 /* Debug */ = {
+		6D04F4B11D4E33BE00DD0732 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HearMeNow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattknott.HearMeNow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		6D6C3A1A1A02705900DBF7A2 /* Release */ = {
+		6D04F4B21D4E33BE00DD0732 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HearMeNow/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattknott.HearMeNow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		6D6C3A1C1A02705900DBF7A2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HearMeNowTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HearMeNow.app/HearMeNow";
-			};
-			name = Debug;
-		};
-		6D6C3A1D1A02705900DBF7A2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HearMeNowTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HearMeNow.app/HearMeNow";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6D6C39F41A02705900DBF7A2 /* Build configuration list for PBXProject "HearMeNow" */ = {
+		6D04F4991D4E33BE00DD0732 /* Build configuration list for PBXProject "HearMeNow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D6C3A161A02705900DBF7A2 /* Debug */,
-				6D6C3A171A02705900DBF7A2 /* Release */,
+				6D04F4AE1D4E33BE00DD0732 /* Debug */,
+				6D04F4AF1D4E33BE00DD0732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6D6C3A181A02705900DBF7A2 /* Build configuration list for PBXNativeTarget "HearMeNow" */ = {
+		6D04F4B01D4E33BE00DD0732 /* Build configuration list for PBXNativeTarget "HearMeNow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				6D6C3A191A02705900DBF7A2 /* Debug */,
-				6D6C3A1A1A02705900DBF7A2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		6D6C3A1B1A02705900DBF7A2 /* Build configuration list for PBXNativeTarget "HearMeNowTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6D6C3A1C1A02705900DBF7A2 /* Debug */,
-				6D6C3A1D1A02705900DBF7A2 /* Release */,
+				6D04F4B11D4E33BE00DD0732 /* Debug */,
+				6D04F4B21D4E33BE00DD0732 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 6D6C39F11A02705900DBF7A2 /* Project object */;
+	rootObject = 6D04F4961D4E33BE00DD0732 /* Project object */;
 }
